@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+
+int main (){
+    int num1;
+    int num2;
+    int num3;
+    int num4;
+    int num5;
+    int acerto;
+    int numeroaletorio;
+    srand(time(NULL));
+    
+    printf ("Bem vindo a loteria do Amyr!\n");
+    sleep (1);
+    printf ("E bem simples, e so escolher 5 numeros de 1 a 100 e acertar pelo menos 2\n");
+    sleep (1);
+    printf ("Muito simples nao e?\n");
+    sleep (1);
+    printf ("Veremos...\n");
+    sleep (1);
+    printf ("Escolha o cinco numero:\n");
+    scanf ("%d %d %d %d %d", &num1, &num2, &num3, &num4, &num5);
+    
+    
+    printf ("Ok vamos ver sua sorte...\n");
+    sleep(2);
+    printf ("Os numeros sao...\n");
+    for (int n; n < 5; n++){
+         numeroaletorio = rand() %100 + 1;
+        printf ("%d ",numeroaletorio);
+    }
+    
+    if (num1 == numeroaletorio){
+        acerto++;
+    }
+    if (num2 == numeroaletorio){
+        acerto++;
+    }
+    if (num3 == numeroaletorio){
+        acerto++;
+    }
+    if (num4 == numeroaletorio){
+        acerto++;
+    }
+    if (num5 == numeroaletorio){
+        acerto++;
+    }
+    if (acerto == 5){
+        printf ("\n \n");
+        printf ("Parabens voce acertou TODOS OS NUMEROS\n");
+        printf ("Bill te dara um bombom com uma cerveja Itaipava\n");
+        printf ("Sortudo...");
+    }else if (acerto >= 3){
+        printf ("\n \n");
+        printf ("Pelo menos voce acertou %d/5 numeros\n",acerto);
+        printf ("Nao ganhou nada kkkkkkkkkkkkkkkkkk");
+        
+    }else if (acerto == 0){
+        printf ("\n \n");
+        printf ("Nao acertou nenhum kkkkkkkkkkkkkkkk");
+    }
+    
+    
+    
+    
+    
+    return 0;
+}
